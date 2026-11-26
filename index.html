@@ -128,4 +128,4 @@ $('go').onclick=()=>{const er=$('er'),ok=$('ok'),nm=$('nm').value.trim(),ph=$('p
 if(!sel.length){er.textContent='Оберіть вільний час';return}if(!nm){er.textContent='Вкажіть ім’я';return}if(ph.replace(/\D/g,'').length<10){er.textContent='Перевірте номер телефону';return}
 er.textContent='';const a=Math.min(...sel),n=sel.length;ls.push({r:res,d:iso(dates[day]),t:a,n:n,l:lab(a,n)});save();
 ok.textContent='Готово, '+nm+'! '+RES[res]+', '+lab(a,n)+'. Сповіщення надійде власнику (у демо — умовно).';ok.classList.add('show');sel=[];rS();rM()};
-rD();rS();rM();}</script></body></html>
+for(let d=0;d<dates.length;d++){day=d;if(C.slots.some((_,t)=>!busy(t)))break}rD();rS();rM();}</script></body></html>
