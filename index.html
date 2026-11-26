@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Демо онлайн-запису</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+:root{--a:#c2573a;--bg:#f6f1ea;--alt:#efe6db;--ink:#2b2420;--mut:#7a6c63;--card:#fffaf4;--line:#e6dbcf;--r:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}svg{display:block;max-width:100%}
+.draft{font:13px/1.4 system-ui,sans-serif;text-align:center;padding:8px 12px;background:#ffe27a;color:#222}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{font:700 26px/1 'Cormorant Garamond',serif;letter-spacing:.5px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:700;padding:14px 22px;border-radius:999px;border:0;cursor:pointer}
+.btn.alt{background:var(--a);color:#fff}
+.hero{padding:56px 20px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}}
+.kick{text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:700;color:var(--a);margin:0 0 10px}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.05;margin:0}
+h1{font-size:clamp(40px,6vw,66px);font-weight:600}h2{font-size:clamp(32px,4.5vw,46px);font-weight:600;margin-bottom:18px}h3{font-size:26px;font-weight:600}
+.lead{font-size:19px;color:var(--mut);max-width:520px;margin:18px 0 26px}
+.art{aspect-ratio:1/1;border-radius:28px;background:linear-gradient(145deg,var(--alt),color-mix(in srgb,var(--a) 22%,var(--bg)));display:grid;place-items:center;overflow:hidden;position:relative}
+.art b{font:600 clamp(80px,16vw,150px)/1 'Cormorant Garamond',serif;color:var(--a);opacity:.9}
+.art span{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:var(--mut)}
+section{padding:52px 0}.alt-sec{background:var(--alt)}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.svc div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}.svc b{display:block;font-size:18px;margin-bottom:4px}.svc p{margin:0;color:var(--mut);font-size:15px}
+.note{font-size:14px;color:var(--mut);margin-top:10px}
+input,select,textarea,button{font:inherit;font-size:16px}
+input,textarea{width:100%;min-height:48px;padding:10px 14px;border-radius:12px;border:2px solid var(--line);background:#fff;color:inherit}
+.err{color:#c0392b;font-size:14px;min-height:1em}.ok{display:none;margin-top:14px;padding:14px 16px;border-radius:12px;background:#e9f5ea;border-left:4px solid #3d8b4a}.ok.show{display:block}
+:focus-visible{outline:3px solid #ffbf00;outline-offset:2px}
+footer{background:var(--ink);color:var(--bg);padding:32px 0}footer .wrap{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between}
+.bk{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:start;margin-top:22px}@media(max-width:860px){.bk{grid-template-columns:1fr}}
+.bk-l,.bk-r{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.cap{font-size:13px;font-weight:700;color:var(--mut);margin:0 0 8px;text-transform:uppercase;letter-spacing:1px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}.tabs button{flex:1 1 auto;min-height:44px;padding:8px 14px;border-radius:12px;border:2px solid var(--line);background:#fff;font-weight:700;cursor:pointer}.tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px}.days button{flex:0 0 56px;display:flex;flex-direction:column;align-items:center;padding:8px 0;border-radius:12px;border:2px solid var(--line);background:#fff;cursor:pointer;line-height:1.2}.days button b{font-size:18px}.days button small{color:var(--mut);font-size:11px}.days button.on{background:var(--a);border-color:var(--a);color:#fff}.days button.on small{color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media(max-width:480px){.slots{grid-template-columns:repeat(3,1fr)}}
+.slots button{min-height:46px;border-radius:10px;border:2px solid var(--line);background:#fff;font-weight:600;cursor:pointer}.slots button.s{background:var(--a);border-color:var(--a);color:#fff}.slots button.b{background:#eee7de;color:#b0a498;text-decoration:line-through;cursor:not-allowed}
+.leg{display:flex;gap:16px;margin-top:12px;font-size:13px;color:var(--mut)}.leg i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px;border:2px solid var(--line);background:#fff}.leg i.s{background:var(--a);border-color:var(--a)}.leg i.b{background:#eee7de}
+.sum{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.bk-r label{display:block;margin-bottom:10px;font-weight:600;font-size:14px}.bk-r input,.bk-r textarea{margin-top:4px}
+.mine{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:14px}.mine button{border:0;background:none;color:var(--a);font-weight:700;cursor:pointer}
+</style></head><body>
+<div class="draft" id="dr"></div>
+<header class="top"><div class="wrap"><span class="logo" id="lg"></span><a href="#book" class="btn">Записатися</a></div></header>
+<main>
+<div class="wrap hero"><div><p class="kick" id="kk"></p><h1 id="h1"></h1><p class="lead" id="ld"></p><a class="btn alt" href="#book" id="cta">Обрати час</a></div>
+<div class="art"><b id="mono"></b><span>тут буде ваше фото</span></div></div>
+<section class="alt-sec"><div class="wrap"><p class="kick" id="sk">Послуги</p><h2 id="st"></h2><div class="svc" id="sv"></div><p class="note">Тексти й повний перелік підставимо з вашого Instagram.</p></div></section>
+<section id="book"><div class="wrap"><p class="kick">Онлайн-запис</p><h2 id="bt"></h2>
+<p class="lead" style="margin-top:0" id="bl"></p>
+<div class="bk"><div class="bk-l">
+<div id="rw"><p class="cap" id="rc"></p><div class="tabs" id="rt"></div></div>
+<p class="cap">День</p><div class="days" id="days"></div>
+<p class="cap">Час</p><div class="slots" id="slots"></div>
+<div class="leg"><span><i></i>вільно</span><span><i class="s"></i>обрано</span><span><i class="b"></i>зайнято</span></div></div>
+<div class="bk-r"><div class="sum" id="sum"></div>
+<label>Ім'я<input id="nm" autocomplete="given-name"></label>
+<label>Телефон<input id="ph" type="tel" inputmode="tel" placeholder="+380" autocomplete="tel"></label>
+<label>Коментар<textarea id="cm"></textarea></label>
+<div class="err" id="er" role="alert"></div>
+<button class="btn alt" id="go" type="button" style="width:100%">Записатися</button>
+<div class="ok" id="ok" role="status"></div><div id="my"></div>
+<p class="note">Демо: запис зберігається лише у вашому браузері. У готовому сайті записи йдуть в одну базу, а вам у Telegram приходить сповіщення.</p></div></div>
+<p style="margin-top:22px" id="ad"></p></div></section>
+</main>
+<footer><div class="wrap"><span class="logo" id="fl"></span><span id="fa"></span></div></footer>
+<script>{
+const T=(a,b)=>{const r=[];for(let h=a;h<b;h++)r.push(String(h).padStart(2,'0')+':00');return r};
+const BEAUTY=T(10,19),STUDIO=T(10,22);
+const CL={
+polina:{n:'Polina Horbachova',kick:'Брови · перманент · курси',h1:'Запис на брови без переписки',lead:'Оберіть послугу, день і час. Вільні години видно одразу.',st:'Що я роблю',svc:[['Перманентний макіяж брів','Запис на процедуру'],['Корекція','Для чинних клієнток'],['Консультація','Підбір форми й кольору'],['Курс для початківців','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#b5656f',bg:'#faf3f1',alt:'#f2e3df',addr:'Гоголя, 72 · Instagram @polina.horbachova'},
+milena:{n:'Dr. Milena',kick:'Косметолог-дерматолог',h1:'Запис до косметолога онлайн',lead:'Оберіть процедуру й вільний час. Підтвердження прийде в месенджер.',st:'Напрямки',svc:[['Консультація','Первинний прийом'],['Ін’єкційні процедури','Запис на процедуру'],['Навчання','Для колег-косметологів']],rl:'Напрямок',slots:BEAUTY,mode:'one',acc:'#3f7f78',bg:'#f2f7f6',alt:'#dfeceb',addr:'Кропивницький · Instagram @doctor__milena'},
+studio38:{n:'38 Studio',mono:'38',kick:'Фотостудія · Кропивницький',h1:'Забронюйте студію онлайн',lead:'Оберіть день і години. Зайнятий час позначений, бронь без дзвінків.',st:'Студія',svc:[['Зал для зйомок','Оренда за годинами'],['Бронь без переписки','Вільний час одразу видно'],['Для фотографів і контенту','Зручно для регулярної оренди']],rl:'Зал',res:['Зал'],slots:STUDIO,mode:'hours',acc:'#3b4a6b',bg:'#f3f4f8',alt:'#e3e6ef',addr:'вул. Чорновола, 38 · Instagram @38.studio.krop'},
+inflight:{n:'Inflight Studio',kick:'Pole dance · фітнес',h1:'Запис на заняття в один дотик',lead:'Оберіть заняття, день і час. Місце закріпиться за вами.',st:'Заняття',svc:[['Pole dance','Групові заняття'],['Фітнес','Групові заняття'],['Пробне заняття','Для тих, хто вперше']],rl:'Заняття',slots:T(9,21),mode:'one',acc:'#8a3d8f',bg:'#f8f2f9',alt:'#eddcf0',addr:'Кропивницький · Instagram @inflight_studio_ua'},
+androsova:{n:'Androsova Brows',kick:'Брови · навчання',h1:'Запис на брови онлайн',lead:'Оберіть послугу, день і час, без листування в Direct.',st:'Послуги',svc:[['Брови','Запис на процедуру'],['Консультація','Підбір форми'],['Курс','Навчання для початківців']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#a8714a',bg:'#faf5f0',alt:'#f0e2d5',addr:'Кропивницький · Instagram @androsovabrows'},
+katya:{n:'Balance Studio',kick:'Масаж · реабілітація · курси',h1:'Запис на масаж онлайн',lead:'Оберіть послугу, день і час. Вільні години видно одразу.',st:'Напрямки',svc:[['Масаж','Запис на сеанс'],['Реабілітаційний масаж','Відновлення'],['Курс масажу з нуля','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#5e8a5c',bg:'#f4f7f2',alt:'#e2ecdf',addr:'Кропивницький · Instagram @massage_katya_krop · @balance_studio_massage'},
+reform:{n:'Reform',kick:'Пілатес на реформері',h1:'Запис на пілатес без чатів',lead:'Оберіть заняття, день і час. Група заповнюється, місце видно одразу.',st:'Заняття',svc:[['Пілатес на реформері','Групове заняття'],['Пробне заняття','Для першого візиту'],['Індивідуально','За домовленістю']],rl:'Заняття',slots:T(8,21),mode:'one',acc:'#7a8a6a',bg:'#f6f6f1',alt:'#e8eadf',addr:'вул. Шевченка, 12 · Instagram @reform.kr'},
+queens:{n:'Queens Studio',kick:'Вії · навчання',h1:'Запис на вії онлайн',lead:'Оберіть послугу, день і час. Вільні години видно одразу.',st:'Послуги',svc:[['Нарощування вій','Запис на процедуру'],['Ламінування','Запис на процедуру'],['Навчання','Курс для майстрів']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#9c4a6e',bg:'#fbf3f6',alt:'#f3dde6',addr:'вул. Пашутинська, 57 · Instagram @queens___studio___'},
+laserose:{n:'Laserose',kick:'Лазерна епіляція',h1:'Запис на епіляцію онлайн',lead:'Оберіть зону, день і час. Підтвердження прийде в месенджер.',st:'Зони',svc:[['Обличчя','Запис на сеанс'],['Ноги','Запис на сеанс'],['Бікіні','Запис на сеанс'],['Комплекс','За домовленістю']],rl:'Зона',slots:BEAUTY,mode:'one',acc:'#c0566b',bg:'#fdf3f4',alt:'#f6dfe2',addr:'вул. Тарковського, 33 · Instagram @laserose.krop'}
+};
+const slug=(location.search.match(/[?&]c=([\w-]+)/)||[])[1]||'polina';const C=CL[slug]||CL.polina;
+const $=id=>document.getElementById(id),R=document.documentElement.style;
+R.setProperty('--a',C.acc);R.setProperty('--bg',C.bg);R.setProperty('--alt',C.alt);
+document.title=C.n+' — онлайн-запис';
+$('dr').textContent='Демо-концепт для «'+C.n+'», не офіційний сайт. Видалимо за першим проханням';
+$('lg').textContent=$('fl').textContent=C.n;$('kk').textContent=C.kick;$('h1').textContent=C.h1;$('ld').textContent=C.lead;$("mono").textContent=C.mono||C.n[0];
+$('st').textContent=C.st;$('sv').innerHTML=C.svc.map(s=>'<div><b>'+s[0]+'</b><p>'+s[1]+'</p></div>').join('');
+$('bt').textContent='Записатися онлайн';$('bl').textContent='Оберіть '+C.rl.toLowerCase()+', день і час. Без листування й дзвінків.';
+$('ad').innerHTML='<b>📍 '+C.addr+'</b>';$('fa').textContent=C.addr;
+const MODE=C.mode,RES=C.res||C.svc.map(s=>s[0]),KEY='demo_'+slug,DN=['нд','пн','вт','ср','чт','пт','сб'],MN=['січ','лют','бер','кві','тра','чер','лип','сер','вер','жов','лис','гру'];
+let res=0,day=0,sel=[],ls=[];try{ls=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(ls))}catch(e){}};
+const dates=[...Array(14)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d});
+const iso=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+if(RES.length<2&&MODE=='hours')$('rw').style.display='none';
+$('rc').textContent=C.rl;$('rt').innerHTML=RES.map((r,i)=>'<button class="'+(i==0?'on':'')+'" data-r="'+i+'">'+r+'</button>').join('');
+const fake=(r,d,t)=>{const n=(d.getDate()*7+d.getMonth()*5+r*11+t*13+slug.length*3)%10;return n<3||(d.getDay()%6==0&&t>=3&&t<=7&&n<6)};
+const busy=t=>fake(res,dates[day],t)||ls.some(x=>x.r==res&&x.d==iso(dates[day])&&t>=x.t&&t<x.t+x.n);
+const tx=t=>C.slots[t];
+const rD=()=>{$('days').innerHTML=dates.map((d,i)=>'<button class="'+(i==day?'on':'')+'" data-i="'+i+'"><small>'+DN[d.getDay()]+'</small><b>'+d.getDate()+'</b><small>'+MN[d.getMonth()]+'</small></button>').join('')};
+const end=t=>{const h=parseInt(C.slots[t])+1;return String(h).padStart(2,'0')+':00'};
+const lab=(a,n)=>{const d=dates[day];return d.getDate()+' '+MN[d.getMonth()]+', '+tx(a)+'–'+end(a+n-1)};
+const rS=()=>{$('slots').innerHTML=C.slots.map((s,t)=>{const b=busy(t),k=sel.includes(t);return'<button class="'+(b?'b':k?'s':'')+'" data-t="'+t+'"'+(b?' disabled':'')+'>'+s+'</button>'}).join('');rSum()};
+const rSum=()=>{const e=$('sum');if(!sel.length){e.textContent='Оберіть час у таблиці';return}const a=Math.min(...sel);e.innerHTML='<b>'+RES[res]+'</b><br>'+lab(a,sel.length)+(sel.length>1?' · '+sel.length+' год':'')};
+const rM=()=>{$('my').innerHTML=ls.length?'<h3 style="margin:18px 0 8px;font-size:18px">Ваші записи</h3>'+ls.map((x,i)=>'<div class="mine"><span>'+RES[x.r]+' · '+x.l+'</span><button data-del="'+i+'">скасувати</button></div>').join(''):''};
+$('rt').onclick=e=>{const b=e.target.closest('button');if(!b)return;res=+b.dataset.r;sel=[];[...$('rt').children].forEach(c=>c.classList.toggle('on',c==b));rS()};
+$('days').onclick=e=>{const b=e.target.closest('button');if(!b)return;day=+b.dataset.i;sel=[];rD();rS()};
+$('slots').onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;const t=+b.dataset.t;
+if(MODE!='hours'||!sel.length){sel=[t]}else{const a=Math.min(...sel),z=Math.max(...sel);if(t==a-1||t==z+1)sel.push(t);else if(sel.includes(t)&&(t==a||t==z))sel=sel.filter(x=>x!=t);else sel=[t]}rS()};
+$('my').onclick=e=>{const b=e.target.closest('[data-del]');if(!b)return;ls.splice(+b.dataset.del,1);save();rM();rS()};
+$('go').onclick=()=>{const er=$('er'),ok=$('ok'),nm=$('nm').value.trim(),ph=$('ph').value;ok.classList.remove('show');
+if(!sel.length){er.textContent='Оберіть вільний час';return}if(!nm){er.textContent='Вкажіть ім’я';return}if(ph.replace(/\D/g,'').length<10){er.textContent='Перевірте номер телефону';return}
+er.textContent='';const a=Math.min(...sel),n=sel.length;ls.push({r:res,d:iso(dates[day]),t:a,n:n,l:lab(a,n)});save();
+ok.textContent='Готово, '+nm+'! '+RES[res]+', '+lab(a,n)+'. Сповіщення надійде власнику (у демо — умовно).';ok.classList.add('show');sel=[];rS();rM()};
+rD();rS();rM();}</script></body></html>
