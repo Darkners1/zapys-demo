@@ -4,7 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;min-width:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
-:root{--a:#c2573a;--bg:#f6f1ea;--alt:#efe6db;--ink:#2b2420;--mut:#7a6c63;--card:#fffaf4;--line:#e6dbcf;--r:16px}
+:root{--a:#c2573a;--bg:#f6f1ea;--alt:#efe6db;--ink:#2b2420;--mut:#6b5d54;--card:#fffaf4;--line:#e6dbcf;--r:16px}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit}svg{display:block;max-width:100%}
 .draft{font:13px/1.4 system-ui,sans-serif;text-align:center;padding:8px 12px;background:#ffe27a;color:#222}
@@ -22,6 +22,7 @@ h1{font-size:clamp(40px,6vw,66px);font-weight:600}h2{font-size:clamp(32px,4.5vw,
 .lead{font-size:19px;color:var(--mut);max-width:520px;margin:18px 0 26px}
 .art{aspect-ratio:1/1;border-radius:28px;background:linear-gradient(145deg,var(--alt),color-mix(in srgb,var(--a) 22%,var(--bg)));display:grid;place-items:center;overflow:hidden;position:relative}
 .art b{font:600 clamp(80px,16vw,150px)/1 'Cormorant Garamond',serif;color:var(--a);opacity:.9}
+@media(max-width:860px){.art{aspect-ratio:16/7}.art b{font-size:70px}}
 .art span{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:13px;color:var(--mut)}
 section{padding:52px 0}.alt-sec{background:var(--alt)}
 .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
@@ -48,8 +49,8 @@ footer{background:var(--ink);color:var(--bg);padding:32px 0}footer .wrap{display
 <header class="top"><div class="wrap"><span class="logo" id="lg"></span><a href="#book" class="btn">Записатися</a></div></header>
 <main>
 <div class="wrap hero"><div><p class="kick" id="kk"></p><h1 id="h1"></h1><p class="lead" id="ld"></p><a class="btn alt" href="#book" id="cta">Обрати час</a></div>
-<div class="art"><b id="mono"></b><span>тут буде ваше фото</span></div></div>
-<section class="alt-sec"><div class="wrap"><p class="kick" id="sk">Послуги</p><h2 id="st"></h2><div class="svc" id="sv"></div><p class="note">Тексти й повний перелік підставимо з вашого Instagram.</p></div></section>
+<div class="art"><b id="mono"></b></div></div>
+<section class="alt-sec"><div class="wrap"><p class="kick" id="sk">Послуги</p><h2 id="st"></h2><div class="svc" id="sv"></div></div></section>
 <section id="book"><div class="wrap"><p class="kick">Запис</p><h2 id="bt"></h2>
 <p class="lead" style="margin-top:0" id="bl"></p>
 <div class="bk"><div class="bk-l">
@@ -72,15 +73,15 @@ footer{background:var(--ink);color:var(--bg);padding:32px 0}footer .wrap{display
 const T=(a,b)=>{const r=[];for(let h=a;h<b;h++)r.push(String(h).padStart(2,'0')+':00');return r};
 const BEAUTY=T(10,19),STUDIO=T(10,22);
 const CL={
-polina:{n:'Polina Horbachova',kick:'Брови · перманент · курси',h1:'Брови. Перманент. Курси',lead:'Поліна Горбачова, Кропивницький. Оберіть день і час, підтвердимо запис.',st:'Що я роблю',svc:[['Перманентний макіяж брів','Запис на процедуру'],['Корекція','Для чинних клієнток'],['Консультація','Підбір форми й кольору'],['Курс для початківців','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#b5656f',bg:'#faf3f1',alt:'#f2e3df',addr:'Гоголя, 72 · Instagram @polina.horbachova'},
-milena:{n:'Dr. Milena',kick:'Косметолог-дерматолог',h1:'Косметолог-дерматолог у Кропивницькому',lead:'Ін’єкційна косметологія й навчання. Оберіть зручний день і час.',st:'Напрямки',svc:[['Консультація','Первинний прийом'],['Ін’єкційні процедури','Запис на процедуру'],['Навчання','Для колег-косметологів']],rl:'Напрямок',slots:BEAUTY,mode:'one',acc:'#3f7f78',bg:'#f2f7f6',alt:'#dfeceb',addr:'Кропивницький · Instagram @doctor__milena'},
+polina:{n:'Polina Horbachova',kick:'Брови · перманент · курси',h1:'Брови. Перманент. Курси',lead:'Поліна Горбачова, Кропивницький. Оберіть день і час, підтвердимо запис.',st:'Що я роблю',svc:[['Перманентний макіяж брів','Запис на процедуру'],['Корекція','Для чинних клієнток'],['Консультація','Підбір форми й кольору'],['Курс для початківців','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#9a4a55',bg:'#faf3f1',alt:'#f2e3df',addr:'Гоголя, 72 · Instagram @polina.horbachova'},
+milena:{n:'Dr. Milena',kick:'Косметолог-дерматолог',h1:'Косметолог-дерматолог у Кропивницькому',lead:'Ін’єкційна косметологія й навчання. Оберіть зручний день і час.',st:'Напрямки',svc:[['Консультація','Первинний прийом'],['Ін’єкційні процедури','Запис на процедуру'],['Навчання','Для колег-косметологів']],rl:'Напрямок',slots:BEAUTY,mode:'one',acc:'#2f6e67',bg:'#f2f7f6',alt:'#dfeceb',addr:'Кропивницький · Instagram @doctor__milena'},
 studio38:{n:'38 Studio',mono:'38',kick:'Фотостудія · Кропивницький',h1:'Фотостудія 38',lead:'Інтер’єрна фотостудія й арт-простір. Оберіть години, вільний час видно одразу.',st:'Студія',svc:[['Зал для зйомок','Оренда за годинами'],['Бронь без переписки','Вільний час одразу видно'],['Для фотографів і контенту','Зручно для регулярної оренди']],rl:'Зал',res:['Зал'],slots:STUDIO,mode:'hours',acc:'#3b4a6b',bg:'#f3f4f8',alt:'#e3e6ef',addr:'вул. Чорновола, 38 · Instagram @38.studio.krop'},
 inflight:{n:'Inflight Studio',kick:'Pole dance · фітнес',h1:'Pole dance і фітнес у Кропивницькому',lead:'Групові заняття, стретчинг, східні танці. Оберіть заняття, день і час.',st:'Заняття',svc:[['Pole dance','Групові заняття'],['Фітнес','Групові заняття'],['Пробне заняття','Для тих, хто вперше']],rl:'Заняття',slots:T(9,21),mode:'one',acc:'#8a3d8f',bg:'#f8f2f9',alt:'#eddcf0',addr:'Кропивницький · Instagram @inflight_studio_ua'},
-androsova:{n:'Androsova Brows',kick:'Брови · навчання',h1:'Брови, вії, ламінування',lead:'Майстер Аріна, 3 роки в бровах. Оберіть день і час.',st:'Послуги',svc:[['Брови','Запис на процедуру'],['Консультація','Підбір форми'],['Курс','Навчання для початківців']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#a8714a',bg:'#faf5f0',alt:'#f0e2d5',addr:'Кропивницький · Instagram @androsovabrows'},
-katya:{n:'Balance Studio',kick:'Масаж · реабілітація · курси',h1:'Масаж і реабілітація',lead:'Масажист-реабілітолог у Кропивницькому. Оберіть день і час.',st:'Напрямки',svc:[['Масаж','Запис на сеанс'],['Реабілітаційний масаж','Відновлення'],['Курс масажу з нуля','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#5e8a5c',bg:'#f4f7f2',alt:'#e2ecdf',addr:'Кропивницький · Instagram @massage_katya_krop · @balance_studio_massage'},
-reform:{n:'Reform',kick:'Кропивницький',h1:'Пілатес на реформері',lead:'Контроль, баланс, точність. Оберіть заняття, день і час.',st:'Заняття',svc:[['Пілатес на реформері','Групове заняття'],['Пробне заняття','Для першого візиту'],['Індивідуально','За домовленістю']],rl:'Заняття',slots:T(8,21),mode:'one',acc:'#7a8a6a',bg:'#f6f6f1',alt:'#e8eadf',addr:'вул. Шевченка, 12 · Instagram @reform.kr'},
+androsova:{n:'Androsova Brows',kick:'Брови · вії · ламінування · курси',h1:'Брови, вії, ламінування',lead:'Майстер Аріна, 3 роки в бровах. Оберіть день і час.',st:'Послуги',svc:[['Брови','Запис на процедуру'],['Вії','Запис на процедуру'],['Ламінування','Запис на процедуру'],['Курс','Навчання для початківців']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#8a5834',bg:'#faf5f0',alt:'#f0e2d5',addr:'Кропивницький · Instagram @androsovabrows'},
+katya:{n:'Balance Studio',kick:'Масаж · реабілітація · курси',h1:'Масаж і реабілітація',lead:'Масажист-реабілітолог у Кропивницькому. Оберіть день і час.',st:'Напрямки',svc:[['Масаж','Запис на сеанс'],['Реабілітаційний масаж','Відновлення'],['Курс масажу з нуля','Запис на навчання']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#486f46',bg:'#f4f7f2',alt:'#e2ecdf',addr:'Кропивницький · Instagram @massage_katya_krop · @balance_studio_massage'},
+reform:{n:'Reform',kick:'Кропивницький',h1:'Пілатес на реформері',lead:'Контроль, баланс, точність. Оберіть заняття, день і час.',st:'Заняття',svc:[['Пілатес на реформері','Групове заняття'],['Пробне заняття','Для першого візиту'],['Індивідуально','За домовленістю']],rl:'Заняття',slots:T(8,21),mode:'one',acc:'#5d6b4e',bg:'#f6f6f1',alt:'#e8eadf',addr:'вул. Шевченка, 12 · Instagram @reform.kr'},
 queens:{n:'Queens Studio',kick:'Вії · навчання',h1:'Нарощування вій, ламінування, брови',lead:'Queen’s Studio, Кропивницький. Оберіть день і час.',st:'Послуги',svc:[['Нарощування вій','Запис на процедуру'],['Ламінування','Запис на процедуру'],['Навчання','Курс для майстрів']],rl:'Послуга',slots:BEAUTY,mode:'one',acc:'#9c4a6e',bg:'#fbf3f6',alt:'#f3dde6',addr:'вул. Пашутинська, 57 · Instagram @queens___studio___'},
-laserose:{n:'Laserose',kick:'Кропивницький',h1:'Лазерна епіляція',lead:'Безболісно й швидко, Кропивницький. Оберіть зону, день і час.',st:'Зони',svc:[['Обличчя','Запис на сеанс'],['Ноги','Запис на сеанс'],['Бікіні','Запис на сеанс'],['Комплекс','За домовленістю']],rl:'Зона',slots:BEAUTY,mode:'one',acc:'#c0566b',bg:'#fdf3f4',alt:'#f6dfe2',addr:'вул. Тарковського, 33 · Instagram @laserose.krop'}
+laserose:{n:'Laserose',kick:'Кропивницький',h1:'Лазерна епіляція',lead:'Безболісно й швидко, Кропивницький. Оберіть зону, день і час.',st:'Зони',svc:[['Обличчя','Запис на сеанс'],['Ноги','Запис на сеанс'],['Бікіні','Запис на сеанс'],['Комплекс','За домовленістю']],rl:'Зона',slots:BEAUTY,mode:'one',acc:'#a8465b',bg:'#fdf3f4',alt:'#f6dfe2',addr:'вул. Тарковського, 33 · Instagram @laserose.krop'}
 };
 const slug=(location.search.match(/[?&]c=([\w-]+)/)||[])[1]||'polina';const C=CL[slug]||CL.polina;
 const $=id=>document.getElementById(id),R=document.documentElement.style;
@@ -99,7 +100,7 @@ const iso=d=>d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 if(RES.length<2&&MODE=='hours')$('rw').style.display='none';
 $('rc').textContent=C.rl;$('rt').innerHTML=RES.map((r,i)=>'<button class="'+(i==0?'on':'')+'" data-r="'+i+'">'+r+'</button>').join('');
 const fake=(r,d,t)=>{const n=(d.getDate()*7+d.getMonth()*5+r*11+t*13+slug.length*3)%10;return n<3||(d.getDay()%6==0&&t>=3&&t<=7&&n<6)};
-const busy=t=>fake(res,dates[day],t)||ls.some(x=>x.r==res&&x.d==iso(dates[day])&&t>=x.t&&t<x.t+x.n);
+const rr=MODE=='hours'?res:0;const past=t=>day==0&&parseInt(C.slots[t])<=new Date().getHours();const busy=t=>fake(rr,dates[day],t)||past(t)||ls.some(x=>(MODE!='hours'||x.r==res)&&x.d==iso(dates[day])&&t>=x.t&&t<x.t+x.n);
 const tx=t=>C.slots[t];
 const rD=()=>{$('days').innerHTML=dates.map((d,i)=>'<button class="'+(i==day?'on':'')+'" data-i="'+i+'"><small>'+DN[d.getDay()]+'</small><b>'+d.getDate()+'</b><small>'+MN[d.getMonth()]+'</small></button>').join('')};
 const end=t=>{const h=parseInt(C.slots[t])+1;return String(h).padStart(2,'0')+':00'};
