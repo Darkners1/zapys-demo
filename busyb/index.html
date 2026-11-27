@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>BusyB — фотостудія в Кропивницькому</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#faf6f0;--tx:#2a211c;--mut:#7a6d63;--line:#e7dccf;--a:#9c4a24;--a2:#c06a3a;--card:#fff;--g:#1f3a2e}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 Manrope,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.demo{background:#f5d547;color:#1c1a14;font-size:12px;text-align:center;padding:7px 12px}
+.w{max-width:1120px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:30;background:rgba(250,246,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:700;letter-spacing:.02em}
+.logo i{font-style:normal;color:var(--a)}
+nav{display:flex;gap:26px;font-size:14px;color:var(--mut)}
+nav a:hover{color:var(--tx)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--tx);color:#fff;border:0;border-radius:999px;padding:14px 26px;font:600 14.5px/1 inherit;font-family:inherit;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--a)}
+.btn.o{background:transparent;color:var(--tx);border:1px solid #cbb9a6}
+.btn.o:hover{border-color:var(--a);color:var(--a);background:transparent}
+.btn.s{padding:11px 20px;font-size:13.5px}
+.btn[disabled]{opacity:.4;cursor:default}
+.hero{padding:48px 0 70px}
+.hg{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.kick{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--a);font-weight:700;margin-bottom:16px}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(44px,7vw,82px);line-height:.98;font-weight:600;letter-spacing:-.01em}
+h1 em{color:var(--a);font-style:italic}
+.sub{color:var(--mut);font-size:17.5px;margin:22px 0 30px;max-width:460px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:flex;gap:30px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line)}
+.facts b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;font-weight:600}
+.facts span{font-size:13px;color:var(--mut)}
+.ph{position:relative;overflow:hidden;border-radius:22px;display:flex;align-items:flex-end;padding:18px}
+.ph span{position:relative;z-index:2;background:rgba(255,255,255,.85);color:var(--tx);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:999px}
+.hphotos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:230px 230px;gap:14px}
+.p1{grid-row:1/3;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.5),transparent 40%),linear-gradient(160deg,#d9a883,#9c4a24 70%,#5e2a10)}
+.p2{background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.35),transparent 40%),linear-gradient(135deg,#2e5a46,#1f3a2e)}
+.p3{background:radial-gradient(circle at 25% 30%,rgba(255,255,255,.7),transparent 40%),linear-gradient(135deg,#f3dccb,#e0b79a)}
+section{padding:76px 0}
+section.alt{background:#f3ebe0}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(34px,5vw,52px);line-height:1.05;font-weight:600;margin-bottom:12px}
+.lead{color:var(--mut);max-width:520px;margin-bottom:38px}
+.ny{display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:26px;overflow:hidden;background:var(--g);color:#f6efe3}
+.ny .ph{border-radius:0;min-height:380px;background:radial-gradient(circle at 20% 25%,rgba(255,225,160,.85) 0 3px,transparent 4px),radial-gradient(circle at 60% 15%,rgba(255,225,160,.8) 0 3px,transparent 4px),radial-gradient(circle at 80% 40%,rgba(255,225,160,.8) 0 3px,transparent 4px),radial-gradient(circle at 35% 55%,rgba(255,225,160,.8) 0 3px,transparent 4px),radial-gradient(circle at 70% 70%,rgba(255,225,160,.8) 0 3px,transparent 4px),radial-gradient(circle at 50% 100%,#a3301f,transparent 60%),linear-gradient(160deg,#2c5a45,#14281f)}
+.ny .tx{padding:46px}
+.ny h2{color:#f6efe3}
+.ny p{color:#c9d5cb;margin-bottom:26px}
+.ny .kick{color:#e8c47a}
+.ny .btn{background:#f6efe3;color:var(--g)}
+.ny .btn:hover{background:#e8c47a}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.c .ph{border-radius:0;height:190px}
+.c .b{padding:22px}
+.c h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:600;margin-bottom:4px}
+.c p{color:var(--mut);font-size:14.5px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.steps b{font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;color:var(--a2);line-height:1;display:block;margin-bottom:6px}
+.steps h4{font-size:17px;margin-bottom:4px}
+.steps p{color:var(--mut);font-size:14.5px}
+.book>*{min-width:0}.book{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;align-items:start}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.lab{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:700;margin-bottom:10px}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px;margin-bottom:22px}
+.d{flex:0 0 62px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px 0;text-align:center;cursor:pointer;font-family:inherit;color:var(--tx)}
+.d small{display:block;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.08em}
+.d b{font-size:20px;font-family:'Cormorant Garamond',Georgia,serif}
+.d.on{background:var(--tx);color:#fff;border-color:var(--tx)}
+.d.on small{color:#cbb9a6}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}
+.sl{border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 0;text-align:center;font:600 14px inherit;font-family:inherit;cursor:pointer;color:var(--tx)}
+.sl:hover{border-color:var(--a)}
+.sl.on{background:var(--a);color:#fff;border-color:var(--a)}
+.sl.x{background:#f2ece4;color:#b9ab9c;text-decoration:line-through;cursor:default;border-color:#f2ece4}
+.leg{display:flex;gap:16px;font-size:12px;color:var(--mut);margin-bottom:6px}
+.dur{display:flex;gap:8px;margin-bottom:6px}
+.dur button{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 0;font:600 14px inherit;font-family:inherit;cursor:pointer}
+.dur button.on{background:var(--tx);color:#fff;border-color:var(--tx)}
+input,textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--tx);font:15px inherit;font-family:inherit;margin-bottom:12px}
+input:focus,textarea:focus{outline:0;border-color:var(--a)}
+textarea{min-height:72px;resize:vertical}
+.err{border-color:#d33!important}
+.sumr{padding:14px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;font-size:15px}
+.sumr:first-of-type{padding-top:0}
+.ok{display:none;background:#e9f3ec;border:1px solid #b5d6bf;border-radius:14px;padding:16px;margin-top:14px;font-size:14.5px}
+.note{font-size:12.5px;color:var(--mut);margin-top:12px}
+.ct{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ct .box b{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+.ct .box{font-size:17px}
+footer{padding:26px 0 44px;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:860px){nav{display:none}.hg,.ny,.book{grid-template-columns:1fr}.cards,.steps,.ct{grid-template-columns:1fr}.hphotos{grid-template-rows:190px 190px}.ny .tx{padding:30px}.ny .ph{min-height:240px}section{padding:52px 0}.facts{gap:20px}.slots{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-концепт для «BusyB», не офіційний сайт. Видалимо за першим проханням</div>
+<header><div class="w hd"><a class="logo" href="#">Busy<i>B</i></a><nav><a href="#ny">Новорічна локація</a><a href="#poslugy">Послуги</a><a href="#book">Бронювання</a><a href="#kontakty">Контакти</a></nav><a class="btn s" href="#book">Забронювати</a></div></header>
+
+<div class="hero"><div class="w hg">
+<div>
+<div class="kick">Фотостудія · Кропивницький</div>
+<h1>Світло, простір і <em>ваша історія</em></h1>
+<p class="sub">Фотостудія для сімейних, дитячих і новорічних зйомок. Оберіть день і години, вільний час видно одразу, без переписки.</p>
+<div class="cta"><a class="btn" href="#book">Забронювати час</a><a class="btn o" href="#ny">Новорічна локація</a></div>
+<div class="facts"><div><b>09:00–20:00</b><span>щодня</span></div><div><b>Чорновола</b><span>25/27</span></div></div>
+</div>
+<div class="hphotos"><div class="ph p1"><span>Фото студії</span></div><div class="ph p2"><span>Новорічна локація</span></div><div class="ph p3"><span>Newborn</span></div></div>
+</div></div>
+
+<section class="alt" id="ny"><div class="w"><div class="ny"><div class="ph"><span>Фото локації</span></div><div class="tx"><div class="kick">Сезон 2026/27</div><h2>Новорічна локація вже готова</h2><p>Святкові декорації, тепле світло й атмосфера для сімейних, дитячих і корпоративних зйомок. Вільні дати швидко розбирають, тому бронюйте заздалегідь.</p><a class="btn" href="#book">Обрати дату</a></div></div></div></section>
+
+<section id="poslugy"><div class="w">
+<div class="kick">Що ми пропонуємо</div><h2>Послуги студії</h2><p class="lead">Усе, що потрібно для зйомки, в одному місці.</p>
+<div class="cards">
+<div class="c"><div class="ph" style="background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.5),transparent 40%),linear-gradient(135deg,#e9c9ae,#b9723f)"><span>Фото</span></div><div class="b"><h3>Оренда студії</h3><p>Фотосесії за годинами: від однієї години до кількох.</p></div></div>
+<div class="c"><div class="ph" style="background:radial-gradient(circle at 25% 30%,rgba(255,255,255,.75),transparent 40%),linear-gradient(135deg,#f6e6d9,#e3bfa4)"><span>Фото</span></div><div class="b"><h3>Newborn</h3><p>Спокійна атмосфера для зйомки найменших.</p></div></div>
+<div class="c"><div class="ph" style="background:radial-gradient(circle at 60% 25%,rgba(255,255,255,.5),transparent 40%),linear-gradient(135deg,#d7c3d1,#8d6a85)"><span>Фото</span></div><div class="b"><h3>Оренда суконь</h3><p>Образи для фотосесії без зайвих клопотів.</p></div></div>
+</div></div></section>
+
+<section class="alt"><div class="w">
+<div class="kick">Як це працює</div><h2>Бронь за хвилину</h2><br>
+<div class="steps"><div><b>1</b><h4>Оберіть день і години</h4><p>Вільний час видно одразу, без повідомлень у Direct.</p></div><div><b>2</b><h4>Залиште контакти</h4><p>Ім'я, телефон і побажання до зйомки.</p></div><div><b>3</b><h4>Ми підтвердимо</h4><p>Зв'яжемося й узгодимо деталі.</p></div></div>
+</div></section>
+
+<section id="book"><div class="w">
+<div class="kick">Бронювання</div><h2>Оберіть день і години</h2><p class="lead">Натисніть на час початку й виберіть тривалість зйомки.</p>
+<div class="book">
+<div class="box">
+<div class="lab">День</div><div class="days" id="days"></div>
+<div class="lab">Час початку</div>
+<div class="leg"><span>вільно</span><span>обрано</span><span style="text-decoration:line-through">зайнято</span></div>
+<div class="slots" id="slots"></div>
+<div class="lab">Тривалість</div><div class="dur" id="dur"></div>
+</div>
+<div class="box">
+<div class="lab">Ваша бронь</div>
+<div class="sumr"><span>Дата</span><b id="sd">не обрано</b></div>
+<div class="sumr"><span>Час</span><b id="st">не обрано</b></div>
+<br>
+<input id="n" type="text" placeholder="Ім'я"><input id="t" type="tel" placeholder="Телефон, +380"><textarea id="m" placeholder="Що плануєте знімати"></textarea>
+<button class="btn" id="go" style="width:100%" disabled>Забронювати</button>
+<div class="ok" id="ok"></div>
+<p class="note">Демо: бронь зберігається лише у вашому браузері. У готовому сайті вона одразу приходить вам у Telegram.</p>
+</div>
+</div></div></section>
+
+<section class="alt" id="kontakty"><div class="w">
+<div class="kick">Контакти</div><h2>Як нас знайти</h2><br>
+<div class="ct"><div class="box"><b>Адреса</b>вул. В. Чорновола, 25/27<br>Кропивницький</div><div class="box"><b>Години роботи</b>щодня 09:00–20:00</div><div class="box"><b>Зв'язок</b>+380 50 088 48 47<br>@photostudio_busyb</div></div>
+</div></section>
+<footer><div class="w">Демо-концепт для BusyB. Не є офіційним сайтом. Видалимо за першим проханням.</div></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const HRS=[9,10,11,12,13,14,15,16,17,18,19];
+const mo=['січ','лют','бер','кві','тра','чер','лип','сер','вер','жов','лис','гру'],wd=['нд','пн','вт','ср','чт','пт','сб'];
+const dates=[...Array(14)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()+i);return d});
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const fake=(d,h)=>{let x=(d.getDate()*31+d.getMonth()*7+h*13)%11;return x<3};
+let ls=[];try{ls=JSON.parse(localStorage.getItem('busyb')||'[]')}catch(e){}
+let day=0,st=null,n=1;
+const busy=h=>(day==0&&h<=new Date().getHours())||fake(dates[day],h)||ls.some(x=>x.d==iso(dates[day])&&h>=x.t&&h<x.t+x.n);
+const fits=h=>{for(let k=0;k<n;k++){if(h+k>19||busy(h+k))return false}return true};
+function rD(){$('#days').innerHTML=dates.map((d,i)=>'<button class="d'+(i==day?' on':'')+'" data-i="'+i+'"><small>'+wd[d.getDay()]+'</small><b>'+d.getDate()+'</b><small>'+mo[d.getMonth()]+'</small></button>').join('');
+document.querySelectorAll('.d').forEach(b=>b.onclick=()=>{day=+b.dataset.i;st=null;rD();rS();rM()})}
+function rS(){$('#slots').innerHTML=HRS.map(h=>{const x=busy(h);return '<button class="sl'+(x?' x':'')+(st===h?' on':'')+'" data-h="'+h+'">'+String(h).padStart(2,'0')+':00</button>'}).join('');
+document.querySelectorAll('.sl:not(.x)').forEach(b=>b.onclick=()=>{st=+b.dataset.h;if(!fits(st)){n=1}rD();rS();rM();rU()})}
+function rU(){$('#dur').innerHTML=[1,2,3,4].map(k=>'<button class="'+(k==n?'on':'')+'" data-k="'+k+'" '+(st!==null&&!(()=>{for(let j=0;j<k;j++){if(st+j>19||busy(st+j))return false}return true})()?'disabled style="opacity:.35"':'')+'>'+k+' год</button>').join('');
+document.querySelectorAll('#dur button').forEach(b=>b.onclick=()=>{if(b.disabled)return;n=+b.dataset.k;rS();rM();rU()})}
+function rM(){const d=dates[day];$('#sd').textContent=wd[d.getDay()]+', '+d.getDate()+' '+mo[d.getMonth()];$('#st').textContent=st===null?'не обрано':String(st).padStart(2,'0')+':00–'+String(st+n).padStart(2,'0')+':00';$('#go').disabled=st===null}
+for(let i=0;i<dates.length;i++){day=i;if(HRS.some(h=>!busy(h)))break}
+rD();rS();rM();rU();
+$('#go').onclick=()=>{let bad=0;[['n',v=>v.trim().length>1],['t',v=>v.replace(/\D/g,'').length>=10]].forEach(([i,f])=>{const e=$('#'+i);const o=f(e.value);e.classList.toggle('err',!o);bad+=!o});if(bad||st===null)return;
+ls.push({d:iso(dates[day]),t:st,n});try{localStorage.setItem('busyb',JSON.stringify(ls))}catch(e){}
+$('#ok').style.display='block';$('#ok').innerHTML='<b>Бронь прийнято.</b> '+$('#n').value.trim()+', чекаємо вас '+$('#sd').textContent+', '+$('#st').textContent+'. Ми зв’яжемося для підтвердження.';st=null;n=1;rS();rM();rU()};
+</script>
+</body>
+</html>
